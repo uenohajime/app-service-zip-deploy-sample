@@ -12,7 +12,11 @@
       "type": "string",
       "metadata": {
         "description": "Location for the resource group."
-      }
+      },
+      "allowedValues": [
+        "japaneast",
+        "japanwest"
+      ]
     }
   },
   "resources": [
