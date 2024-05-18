@@ -217,7 +217,8 @@
             "apiVersion": "2021-03-01",
             "name": "[concat(parameters('appSvcName'), '/onedeploy')]",
             "dependsOn": [
-                "[resourceId('Microsoft.Web/sites', parameters('appSvcName'))]"
+                "[resourceId('Microsoft.Web/sites', parameters('appSvcName'))]",
+                "[resourceId('Microsoft.Web/serverfarms', parameters('appSvcPlanName'))]"
             ],
             "properties": {
                 "packageUri": "https://github.com/uenohajime/app-service-zip-deploy-sample/raw/main/resources/archives.zip",
