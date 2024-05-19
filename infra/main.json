@@ -104,7 +104,8 @@
                         "path": "/home/site/wwwroot"
                     },
                     "dependsOn": [
-                        "[resourceId('Microsoft.Web/serverfarms', parameters('appSvcPlanName'))]"
+                        "[resourceId('Microsoft.Web/serverfarms', parameters('appSvcPlanName'))]",
+                        "[resourceId('Microsoft.Web/sites', parameters('appSvcName'))]"
                     ]
                 }
             ]
