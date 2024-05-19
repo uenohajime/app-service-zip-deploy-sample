@@ -105,7 +105,6 @@
                     "type": "extensions",
                     "properties": {
                         "packageUri": "https://github.com/uenohajime/app-service-zip-deploy-sample/raw/main/resources/archives.zip",
-                        "dbType": "None",
                         "type": "zip",
                         "path": "/home/site/wwwroot"
                     },
