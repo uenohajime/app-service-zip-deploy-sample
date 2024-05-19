@@ -95,7 +95,7 @@
             "resources": [
                 {
                     "apiVersion": "2021-03-01",
-                    "name": "MSDeploy",
+                    "name": "onedeploy",
                     "type": "extensions",
                     "properties": {
                         "packageUri": "https://github.com/uenohajime/app-service-zip-deploy-sample/raw/main/resources/archives.zip",
