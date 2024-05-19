@@ -62,6 +62,12 @@
                         "hostType": "Repository"
                     }
                 ],
+                "appSettings": [
+                    {
+                        "name": "SERVER_PORT",
+                        "value": "3000"
+                    }
+                ],
                 "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('appSvcPlanName'))]",
                 "reserved": true,
                 "isXenon": false,
@@ -156,7 +162,7 @@
                 "use32BitWorkerProcess": true,
                 "webSocketsEnabled": false,
                 "alwaysOn": true,
-                "appCommandLine": "npm install && npm start",
+                "appCommandLine": "rm -rf node_modules && npm install && npm start",
                 "managedPipelineMode": "Integrated",
                 "virtualApplications": [
                     {
