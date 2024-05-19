@@ -91,19 +91,20 @@
                 "publicNetworkAccess": "Enabled",
                 "storageAccountRequired": false,
                 "keyVaultReferenceIdentity": "SystemAssigned"
-            }
-        },
-        {
-            "type": "Microsoft.Web/sites/basicPublishingCredentialsPolicies",
-            "apiVersion": "2023-01-01",
-            "name": "[concat(parameters('appSvcName'), '/ftp')]",
-            "location": "Japan East",
-            "dependsOn": [
-                "[resourceId('Microsoft.Web/sites', parameters('appSvcName'))]"
-            ],
-            "properties": {
-                "allow": false
-            }
+            },
+            "resources": [
+                {
+                    "apiVersion": "2021-03-01",
+                    "name": "MSDeploy",
+                    "type": "extensions",
+                    "properties": {
+                        "packageUri": "https://github.com/uenohajime/app-service-zip-deploy-sample/raw/main/resources/archives.zip",
+                        "dbType": "None",
+                        "type": "zip",
+                        "path": "/home/site/wwwroot"
+                    }
+                }
+            ]
         },
         {
             "type": "Microsoft.Web/sites/basicPublishingCredentialsPolicies",
@@ -210,20 +211,6 @@
             "properties": {
                 "siteName": "aszipdplydemo4u20240513",
                 "hostNameType": "Verified"
-            }
-        },
-        {
-            "type": "Microsoft.Web/sites/extensions",
-            "apiVersion": "2021-03-01",
-            "name": "[concat(parameters('appSvcName'), '/MSDeploy')]",
-            "dependsOn": [
-                "[resourceId('Microsoft.Web/sites', parameters('appSvcName'))]",
-                "[resourceId('Microsoft.Web/serverfarms', parameters('appSvcPlanName'))]"
-            ],
-            "properties": {
-                "packageUri": "https://github.com/uenohajime/app-service-zip-deploy-sample/raw/main/resources/archives.zip",
-                "type": "zip",
-                "path": "/home/site/wwwroot"
             }
         }
     ]
