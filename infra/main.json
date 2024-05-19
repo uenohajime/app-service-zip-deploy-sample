@@ -62,12 +62,6 @@
                         "hostType": "Repository"
                     }
                 ],
-                "appSettings": [
-                    {
-                        "name": "SERVER_PORT",
-                        "value": "3000"
-                    }
-                ],
                 "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('appSvcPlanName'))]",
                 "reserved": true,
                 "isXenon": false,
@@ -137,6 +131,16 @@
             ],
             "properties": {
                 "numberOfWorkers": 1,
+                "appSettings": [
+                    {
+                        "name": "SERVER_PORT",
+                        "value": "3000"
+                    },
+                    {
+                        "name": "SCM_DO_BUILD_DURING_DEPLOYMENT",
+                        "value": "true"
+                    }
+                ],
                 "defaultDocuments": [
                     "Default.htm",
                     "Default.html",
